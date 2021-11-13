@@ -13,9 +13,9 @@ const VacationPackage = ({ vacationPackage }) => {
                     <Card.Body>
                         <div>
                             <div>
-                                <Card.Title title={name}>{name.substring(0, 20)}</Card.Title>
+                                <Card.Title title={name}>{name?.substring(0, 20)}</Card.Title>
                                 <Card.Text title={description}>
-                                {description.substring(0, 100)} . . .
+                                {description?.substring(0, 100)} . . .
                                 </Card.Text>
                             </div>
                             <div>
