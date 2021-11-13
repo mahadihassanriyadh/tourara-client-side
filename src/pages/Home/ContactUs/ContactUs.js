@@ -1,40 +1,34 @@
 import React from 'react';
-import Select from "react-select";
-import { useForm, Controller } from "react-hook-form";
-import Input from "@material-ui/core/Input";
+import axios from 'axios';
+import { useForm } from "react-hook-form";
+import './ContactUs.css'
 
 const ContactUs = () => {
-    const { control, handleSubmit } = useForm({
-      defaultValues: {
-        firstName: '',
-        select: {}
-      }
-    });
-    const onSubmit = data => console.log(data);
-  
+    const { register, handleSubmit, reset } = useForm();
+    const onSubmit = data => {
+        console.log(data);
+        axios.post('https://boiling-depths-33003.herokuapp.com/contactUs', data)
+        .then(res => {
+            // console.log(res);
+            if (res.data.insertedId) {
+                alert('Thank you so much for your interest, our team will reach out to you as soon as possible')
+                reset();
+            }
+        })
+    };
+     
     return (
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Controller
-          name="firstName"
-          control={control}
-          render={({ field }) => <Input {...field} />}
-        />
-        <Controller
-          name="select"
-          control={control}
-          render={({ field }) => <Select 
-            {...field} 
-            options={[
-              { value: "chocolate", label: "Chocolate" },
-              { value: "strawberry", label: "Strawberry" },
-              { value: "vanilla", label: "Vanilla" }
-            ]} 
-          />}
-        />
-        <input type="submit" />
-      </form>
+        <div className="contact-us">
+            <h1 className="mt-5">Contact Us</h1>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <input className="form-control" {...register("name")} placeholder="Name" required/>
+                <input className="form-control" type="email" {...register("email")} placeholder="Email" required/>
+                <textarea className="form-control" {...register("Comment")} placeholder="Comment" required/>
+                <input className="btn btn-dark" type="submit" />
+            </form>
+        </div>
     );
-  };
-  
+};
+
 
 export default ContactUs;
