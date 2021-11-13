@@ -17,7 +17,6 @@ const VacationPackages = () => {
                     ></VacationPackage>)
             ))}
             </Row>
-            <Link to="/vacationPackages"><Button variant="secondary" className="btn-lg mt-3">Load More Vacation Packages</Button></Link>
         </div>
     );
 };
