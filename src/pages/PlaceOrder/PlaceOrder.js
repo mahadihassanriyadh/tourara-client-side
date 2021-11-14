@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory, useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
@@ -10,8 +10,8 @@ const PlaceOrder = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const history = useHistory();
     const [orderItem, setOrderItem] = useState({});
-    const url = `https://boiling-depths-33003.herokuapp.com/services/${packageId}`
-    useState(() => {
+    const url = `https://boiling-depths-33003.herokuapp.com/vacationPackage/${packageId}`
+    useEffect(() => {
         fetch(url)
             .then(res => res.json())
             .then(data => {
