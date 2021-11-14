@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import useFirebase from '../../../hooks/useFirebase';
 import googleImg from '../../../images/icons/google.png';
 
 const Login = () => {

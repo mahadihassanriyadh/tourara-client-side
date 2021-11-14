@@ -2,6 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home/Home/Home';
+import NotFound from './pages/NotFound/NotFound'
 import Header from './pages/Shared/Header/Header';
 import Footer from './pages/Shared/Footer/Footer';
 import VacationPackages from './pages/Home/VacationPackages/VacationPackages';
@@ -10,6 +11,8 @@ import AuthProvider from './context/AuthProvider';
 import Register from './pages/Login/Register/Register';
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 import MyOrders from './pages/MyOrders/MyOrders';
+import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
+import AllOrders from './pages/AllOrders/AllOrders';
 
 function App() {
   return (
@@ -30,14 +33,20 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
-            <Route path="/placeOrder/:packageId">
+            <PrivateRoute path="/placeOrder/:packageId">
               <PlaceOrder></PlaceOrder>
-            </Route>
+            </PrivateRoute>
             <Route path="/vacationPackages">
               <VacationPackages></VacationPackages>
             </Route>
-            <Route path="/myOrders">
+            <PrivateRoute path="/myOrders">
               <MyOrders></MyOrders>
+            </PrivateRoute>
+            <PrivateRoute>
+              <AllOrders></AllOrders>
+            </PrivateRoute>
+            <Route path="*">
+              <NotFound></NotFound>
             </Route>
           </Switch>
           <Footer></Footer>
