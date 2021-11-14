@@ -18,7 +18,6 @@ const Header = () => {
                         <Nav.Link as={Link} to="/home">Home</Nav.Link>
                         <Nav.Link as={Link} to="/vacationPackages">Vacation Packages</Nav.Link>
                         <Nav.Link as={Link} to="/myOrders">My Orders</Nav.Link>
-                        <Nav.Link as={Link} to="/recoveryPrograms">Recovery Programms</Nav.Link>
                         {user?.email ?
                             <Button variant="light" size="sm" onClick={logOut}>Log Out</Button>
                             :

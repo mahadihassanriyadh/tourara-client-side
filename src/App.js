@@ -8,6 +8,7 @@ import VacationPackages from './pages/Home/VacationPackages/VacationPackages';
 import Login from './pages/Login/Login/Login';
 import AuthProvider from './context/AuthProvider';
 import Register from './pages/Login/Register/Register';
+import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
             </Route>
             <Route path="/register">
               <Register></Register>
+            </Route>
+            <Route path="/placeOrder/:packageId">
+              <PlaceOrder></PlaceOrder>
             </Route>
             <Route path="/vacationPackages">
               <VacationPackages></VacationPackages>

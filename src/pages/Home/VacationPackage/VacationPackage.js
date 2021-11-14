@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const VacationPackage = ({ vacationPackage }) => {
     const { name, price, description, img, type, _id } = vacationPackage;
-    const vacationPackageDetailUrl = `/vacationPackageDetails/${_id}`
+    const vacationPackageDetailUrl = `/placeOrder/${_id}`
     return (
         <div>
             <Col>
@@ -25,7 +25,7 @@ const VacationPackage = ({ vacationPackage }) => {
                                 <Card.Text className="fs-6 mt-0">
                                     Type: { type }
                                 </Card.Text>
-                                <Link to={vacationPackageDetailUrl}><Button variant="dark">Place Order</Button></Link>
+                                <Link to={vacationPackageDetailUrl} ><Button variant="dark">Place Order</Button></Link>
                             </div>
                         </div>
                     </Card.Body>
