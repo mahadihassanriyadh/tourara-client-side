@@ -13,6 +13,7 @@ import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
 import MyOrders from './pages/MyOrders/MyOrders';
 import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 import AllOrders from './pages/AllOrders/AllOrders';
+import AddNewPackage from './pages/AddNewPackage/AddNewPackage';
 
 function App() {
   return (
@@ -42,8 +43,11 @@ function App() {
             <PrivateRoute path="/myOrders">
               <MyOrders></MyOrders>
             </PrivateRoute>
-            <PrivateRoute>
+            <PrivateRoute path="/allOrders">
               <AllOrders></AllOrders>
+            </PrivateRoute>
+            <PrivateRoute path="/addNewPackage">
+              <AddNewPackage></AddNewPackage>
             </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>

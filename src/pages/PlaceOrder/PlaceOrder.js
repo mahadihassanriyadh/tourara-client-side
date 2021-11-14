@@ -24,7 +24,7 @@ const PlaceOrder = () => {
         if ((data.name !== "") && (data.email !== "")){
             axios.post('https://boiling-depths-33003.herokuapp.com/placeOrder', data)
                 .then(res => {
-                    // console.log(res);
+                    console.log(res);
                     if (res.data.insertedId) {
                         alert('Thank you so much for placing an order, our team will reach out to you as soon as possible')
                         reset();
