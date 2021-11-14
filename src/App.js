@@ -9,6 +9,7 @@ import Login from './pages/Login/Login/Login';
 import AuthProvider from './context/AuthProvider';
 import Register from './pages/Login/Register/Register';
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder';
+import MyOrders from './pages/MyOrders/MyOrders';
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
             </Route>
             <Route path="/vacationPackages">
               <VacationPackages></VacationPackages>
+            </Route>
+            <Route path="/myOrders">
+              <MyOrders></MyOrders>
             </Route>
           </Switch>
           <Footer></Footer>
