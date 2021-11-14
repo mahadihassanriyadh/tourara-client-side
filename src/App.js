@@ -7,6 +7,7 @@ import Footer from './pages/Shared/Footer/Footer';
 import VacationPackages from './pages/Home/VacationPackages/VacationPackages';
 import Login from './pages/Login/Login/Login';
 import AuthProvider from './context/AuthProvider';
+import Register from './pages/Login/Register/Register';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
             </Route>
             <Route path="/login">
               <Login></Login>
+            </Route>
+            <Route path="/register">
+              <Register></Register>
             </Route>
             <Route path="/vacationPackages">
               <VacationPackages></VacationPackages>
