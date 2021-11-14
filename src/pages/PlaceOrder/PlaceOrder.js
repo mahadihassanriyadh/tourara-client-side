@@ -40,6 +40,8 @@ const PlaceOrder = () => {
                 
                 <h1 className="mt-5">Place an Order for {orderItem.name}</h1>
                 <p className="fw-bold fs-4 text-danger">Your bill is {orderItem.price}$</p>
+                <p className="fw-bold fs-6">Type: { orderItem.type }</p>
+                <p>{orderItem.description}</p>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input className="form-control" {...register("packageid")} placeholder="packageid" required defaultValue={packageId} readOnly/>
                     <input defaultValue={user.displayName} className="form-control" type="text" {...register("name")} placeholder="Full Name" required />
