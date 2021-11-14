@@ -19,13 +19,13 @@ const PlaceOrder = () => {
             })
     }, []);
 
-    const onSubmit = data => {
+    const onSubmit = (data) => {
         console.log(data);
-        axios.post('https://boiling-depths-33003.herokuapp.com/contactUs', data)
+        axios.post('http://localhost:5000/placeOrder', data)
         .then(res => {
             // console.log(res);
             if (res.data.insertedId) {
-                alert('Thank you so much for your interest, our team will reach out to you as soon as possible')
+                alert('Thank you so much for placing an order, our team will reach out to you as soon as possible')
                 reset();
             }
         })
@@ -38,12 +38,13 @@ const PlaceOrder = () => {
                 <h1 className="mt-5">Place an Order</h1>
                 <p className="fw-bold fs-4 text-danger">Your bill is {orderItem.price}$</p>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <input className="form-control" {...register("packageName")} placeholder="Pckage Name" required value={orderItem.name} readOnly />
-                    <input className="form-control" {...register("_id")} placeholder="_id" required value={orderItem._id} readOnly/>
+                    <input className="form-control" {...register("packageName")} placeholder="Pckage Name" required defaultValue={orderItem.name} readOnly />
+                    <input className="form-control" {...register("packageid")} placeholder="packageid" required defaultValue={orderItem._id} readOnly/>
                     <input defaultValue={user.displayName} className="form-control" type="text" {...register("name")} placeholder="Full Name" required />
                     <input defaultValue={user.email} className="form-control" type="email" {...register("email")} placeholder="Email" required />
                     {errors.email && <span className="error">This field is required</span>}
                     <input className="form-control" type="tel" {...register("phone")} placeholder="Phone No." required />
+                    <input defaultValue={Date()} className="form-control" type="" {...register("time")} placeholder="Time" required readOnly/>
                     <textarea className="form-control" {...register("address")} placeholder="Address" required/>
                     <input className="btn btn-dark" type="submit" />
                 </form>
