@@ -5,11 +5,10 @@ import MyOrder from './MyOrder/MyOrder';
 
 const MyOrders = () => {
     const { user } = useAuth();
-    const [email, setEmail] = useState();
     const [myOrders, setMyOrders] = useState([]);
     useEffect(() => {
         if (user.email) {
-            axios.post('http://localhost:5000/myOrders', user)
+            axios.post('https://boiling-depths-33003.herokuapp.com/myOrders', user)
                 .then(res => {
                     const data = res.data;
                     console.log(data);
