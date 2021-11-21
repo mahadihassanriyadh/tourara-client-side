@@ -25,16 +25,16 @@ const MyOrder = ({ myOrder, deleteOrder, isAllOrders, updateOrder }) => {
         <div className="container mt-3">
             <div className="row bg-light bg-gradient rounded shadow-sm">
                 <div className="col-md-3 my-3">
-                    <img className="img-fluid rounded" src={orderItem.img} alt=""/>
+                    <img className="img-fluid rounded" src={orderItem?.img} alt=""/>
                 </div>
                 <div className="col-md-8 d-flex flex-column justify-content-center text-start">
-                    <h5 className="m-0">Package Name: {orderItem.name}
+                    <h5 className="m-0">Package Name: {orderItem?.name}
                         <button onClick={() => { deleteOrder(_id) }} className="btn btn-danger mx-2" title="Cancel the Order">X</button>
                         {
                             (orderStatus !== "approved") && isAllOrders && <button onClick={() => { updateOrder(_id) }} className="btn btn-success" title="Approve the Order">✓</button>
                         }
                     </h5>
-                    <p className="text-danger m-0">Price: {orderItem.price}$</p>
+                    <p className="text-danger m-0">Price: {orderItem?.price}$</p>
                     <p className="m-0"><span className="fw-bold">Order Id:</span> {_id}</p>
                     <small className="text-muted">Order placed on, {time}</small>
                     <small className="fw-bold text-danger">{orderPlacedBy}</small>
