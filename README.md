@@ -7,7 +7,10 @@
 
 ### Importnat notes about this projects:
 * This project is solely developed by [Md. Mahadi Hassan Riyadh](https://github.com/mahadihassanriyadh)
-* This project was part of an assignment 
-* This project represents nothing serious, it is a learning project only
-* This project/website is about a Tourism site, where you can purchase or order a package
-* There are some public and private pages in this website. To checkout the private pages one has to log in to the website.
+* Tourara is a Bangladesh based travel agency. 
+* Users can book new packages and manage their previous bookings.
+* Users can contact Tourara by filling out the contact us form on the home page.
+* Totally responsive design.
+
+### Technoly Used:
+    HTML, CSS, JS, React, Firebase, Bootstrap, React Hook Form, React Router, Node JS, Node Express, MongoDB.
